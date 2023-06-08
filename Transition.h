@@ -5,7 +5,6 @@
 #ifndef REGEX_EQUIVALENCE_TRANSITION_H
 #define REGEX_EQUIVALENCE_TRANSITION_H
 
-
 class Transition {
 
 };
