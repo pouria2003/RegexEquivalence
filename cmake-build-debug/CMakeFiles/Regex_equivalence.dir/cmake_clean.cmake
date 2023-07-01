@@ -1,16 +1,13 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Regex_equivalence.dir/DFA.cpp.o"
-  "CMakeFiles/Regex_equivalence.dir/DFA.cpp.o.d"
-  "CMakeFiles/Regex_equivalence.dir/NFA.cpp.o"
-  "CMakeFiles/Regex_equivalence.dir/NFA.cpp.o.d"
-  "CMakeFiles/Regex_equivalence.dir/State.cpp.o"
-  "CMakeFiles/Regex_equivalence.dir/State.cpp.o.d"
-  "CMakeFiles/Regex_equivalence.dir/Transition.cpp.o"
-  "CMakeFiles/Regex_equivalence.dir/Transition.cpp.o.d"
-  "CMakeFiles/Regex_equivalence.dir/main.cpp.o"
-  "CMakeFiles/Regex_equivalence.dir/main.cpp.o.d"
-  "Regex_equivalence"
+  "CMakeFiles/Regex_equivalence.dir/DFA.cpp.obj"
+  "CMakeFiles/Regex_equivalence.dir/NFA.cpp.obj"
+  "CMakeFiles/Regex_equivalence.dir/State.cpp.obj"
+  "CMakeFiles/Regex_equivalence.dir/Transition.cpp.obj"
+  "CMakeFiles/Regex_equivalence.dir/main.cpp.obj"
+  "Regex_equivalence.exe"
+  "Regex_equivalence.exe.manifest"
   "Regex_equivalence.pdb"
+  "libRegex_equivalence.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

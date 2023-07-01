@@ -4,15 +4,25 @@ set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
 
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/lenovo/Desktop/university/Regex_equivalence/DFA.cpp" "C:/Users/lenovo/Desktop/university/Regex_equivalence/cmake-build-debug/CMakeFiles/Regex_equivalence.dir/DFA.cpp.obj"
+  "C:/Users/lenovo/Desktop/university/Regex_equivalence/NFA.cpp" "C:/Users/lenovo/Desktop/university/Regex_equivalence/cmake-build-debug/CMakeFiles/Regex_equivalence.dir/NFA.cpp.obj"
+  "C:/Users/lenovo/Desktop/university/Regex_equivalence/State.cpp" "C:/Users/lenovo/Desktop/university/Regex_equivalence/cmake-build-debug/CMakeFiles/Regex_equivalence.dir/State.cpp.obj"
+  "C:/Users/lenovo/Desktop/university/Regex_equivalence/Transition.cpp" "C:/Users/lenovo/Desktop/university/Regex_equivalence/cmake-build-debug/CMakeFiles/Regex_equivalence.dir/Transition.cpp.obj"
+  "C:/Users/lenovo/Desktop/university/Regex_equivalence/main.cpp" "C:/Users/lenovo/Desktop/university/Regex_equivalence/cmake-build-debug/CMakeFiles/Regex_equivalence.dir/main.cpp.obj"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../."
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/amin/Documents/RegexEquivalence/DFA.cpp" "CMakeFiles/Regex_equivalence.dir/DFA.cpp.o" "gcc" "CMakeFiles/Regex_equivalence.dir/DFA.cpp.o.d"
-  "/Users/amin/Documents/RegexEquivalence/NFA.cpp" "CMakeFiles/Regex_equivalence.dir/NFA.cpp.o" "gcc" "CMakeFiles/Regex_equivalence.dir/NFA.cpp.o.d"
-  "/Users/amin/Documents/RegexEquivalence/State.cpp" "CMakeFiles/Regex_equivalence.dir/State.cpp.o" "gcc" "CMakeFiles/Regex_equivalence.dir/State.cpp.o.d"
-  "/Users/amin/Documents/RegexEquivalence/Transition.cpp" "CMakeFiles/Regex_equivalence.dir/Transition.cpp.o" "gcc" "CMakeFiles/Regex_equivalence.dir/Transition.cpp.o.d"
-  "/Users/amin/Documents/RegexEquivalence/main.cpp" "CMakeFiles/Regex_equivalence.dir/main.cpp.o" "gcc" "CMakeFiles/Regex_equivalence.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.
