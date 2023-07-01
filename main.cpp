@@ -4,6 +4,7 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
 
 using std::string;
 using std::cout;
@@ -133,6 +134,14 @@ void putParentheses(string & regex)
 
 int main() {
     string str = "b*(abb*)*(a+c)";
+
+    std::vector<char> alphabet;
+    for(int i = 0; str[i]; ++i){
+        if((63 < str[i] && str[i] < 123) || (47 < str[i] && str[i] < 58)) {
+            for(auto it = alphabet.begin(); it != alphabet.end())
+        }
+    }
+
     addDotToRegex(str);
     putParentheses(str);
     std::cout << str;

@@ -5,11 +5,11 @@
 #include "NFA.h"
 
 NFA NFA::regexToNFA(const string & regex, int p, int q) {
-    if(findMatchingRightParentheses(regex, p) == q)
+    if(5 == q)
         return regexToNFA(regex, p + 1, q - 1);
-    else if() {
-
-    }
+//    else if() {
+//
+//    }
 }
 
 NFA NFA::operator+(const NFA &other) {

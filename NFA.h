@@ -5,7 +5,6 @@
 #ifndef REGEX_EQUIVALENCE_NFA_H
 #define REGEX_EQUIVALENCE_NFA_H
 #include <iostream>
-#include "main.cpp"
 #include "State.h"
 #include <list>
 
