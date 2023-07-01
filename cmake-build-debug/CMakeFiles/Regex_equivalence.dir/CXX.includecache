@@ -6,9 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/lenovo/Desktop/university/Regex_equivalence/main.cpp
-string
--
-iostream
--
+C:/Users/lenovo/Desktop/university/Regex_equivalence/State.h
+
+C:/Users/lenovo/Desktop/university/Regex_equivalence/Transition.cpp
+Transition.h
+C:/Users/lenovo/Desktop/university/Regex_equivalence/Transition.h
+
+C:/Users/lenovo/Desktop/university/Regex_equivalence/Transition.h
+State.h
+C:/Users/lenovo/Desktop/university/Regex_equivalence/State.h
 

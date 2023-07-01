@@ -11,6 +11,7 @@ CMakeFiles/Regex_equivalence.dir/State.cpp.obj: \
  ../State.cpp \
  ../State.h
 CMakeFiles/Regex_equivalence.dir/Transition.cpp.obj: \
+ ../State.h \
  ../Transition.cpp \
  ../Transition.h
 CMakeFiles/Regex_equivalence.dir/main.cpp.obj: \
