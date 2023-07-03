@@ -14,12 +14,54 @@ NFA NFA::regexToNFA(const string & regex, int p, int q, const vector<char> & alp
         return nfa;
     }
     else if(regex[q] == '*') {
-
+        return (regexToNFA(regex, p + 1, q - 2, alphabet)).starOperation();
     }
+    else if(regex[findMatchingRightParentheses(regex, p) + 1] == '+')
+        return regexToNFA(regex, p + 1, findMatchingRightParentheses(regex, p) - 1, alphabet) +
+                regexToNFA(regex, findMatchingLeftParentheses(regex, q) + 1, q - 1, alphabet);
+    else
+        return regexToNFA(regex, p + 1, findMatchingRightParentheses(regex, p) - 1, alphabet) *
+               regexToNFA(regex, findMatchingLeftParentheses(regex, q) + 1, q - 1, alphabet);
 }
 
 NFA NFA::operator+(const NFA &other) {
+    NFA res(this->alphabet, state_number + other.state_number + 2,
+            vector<int>{state_number + other.state_number + 1});
+    res.addTransition(transition_matrix, state_number, 1);
+    res.addTransition(other.transition_matrix, other.state_number , state_number + 1);
+    res.addTransition(0, 'l', 1);
+    res.addTransition(0, 'l', state_number + 1);
+    res.addTransition(state_number, 'l', state_number + other.state_number + 1);
+    res.addTransition(state_number + other.state_number, 'l', state_number + other.state_number + 1);
 
+    return res;
+}
+
+NFA NFA::operator*(const NFA &other) {
+    NFA res(this->alphabet, state_number + other.state_number + 1,
+            vector<int>{state_number + other.state_number});
+    res.addTransition(transition_matrix, state_number, 0);
+    res.addTransition(other.transition_matrix, other.state_number , state_number);
+    res.addTransition(state_number - 1, 'l', state_number);
+    res.addTransition(state_number + other.state_number - 1 , 'l', state_number + other.state_number);
+
+    return res;
+
+
+
+
+
+}
+
+NFA NFA::starOperation() {
+    NFA res(this->alphabet, state_number + 2, vector<int>{state_number + 1});
+    res.addTransition(transition_matrix, state_number, 1);
+    res.addTransition(0, 'l', 1);
+    res.addTransition(0, 'l', state_number + 1);
+    res.addTransition(state_number, 'l', state_number + 1);
+    res.addTransition(state_number + 1, 'l', 0);
+
+    return res;
 }
 
 NFA::NFA(const vector<char> &alphabet, int state_number, const vector<int> & final_states) {
@@ -39,6 +81,7 @@ NFA::~NFA() {
         delete [] transition_matrix[i];
     }
     delete [] transition_matrix;
+    delete [] final_states;
 }
 
 void NFA::addTransition(int state, char word, int destination) {
@@ -48,28 +91,17 @@ void NFA::addTransition(int state, char word, int destination) {
             break;
     }
     transition_matrix[state][i].push_back(destination);
+    cout << "addTransition";
+//    getTransition(state, word).push_back(destination);
 }
 
 void NFA::addTransition(list<int>** transitions, int states,int start_ind) {
-
     for(int i = 0; i < states; ++i) {
         for(int j = 0; j < alphabet.size(); ++j) {
             transition_matrix[i + start_ind][j].assign(transitions[i][j].begin(), transitions[i][j].end());
         }
     }
 }
-
-NFA NFA::starOperation() {
-    NFA res(this->alphabet, state_number + 2, vector<int>{state_number + 1});
-    res.addTransition(0, 'l', 1);
-    res.addTransition(0, 'l', state_number + 1);
-    res.addTransition(state_number, 'l', state_number + 1);
-    res.addTransition(state_number + 1, 'l', 0);
-    res.addTransition(transition_matrix, state_number, 1);
-
-    return res;
-}
-
 
 ostream& operator<<(ostream& os, const NFA& nfa)
 {
@@ -84,4 +116,13 @@ ostream& operator<<(ostream& os, const NFA& nfa)
         os << "]\n";
     }
     return os;
+}
+
+list<int> NFA::getTransition(int state, char word) {
+    int i;
+    for(i = 0; i < alphabet.size(); ++i) {
+        if(alphabet[i] == word)
+            break;
+    }
+    return transition_matrix[state][i];
 }

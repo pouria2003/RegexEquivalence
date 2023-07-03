@@ -6,6 +6,7 @@
 #define REGEX_EQUIVALENCE_NFA_H
 #include <iostream>
 #include "State.h"
+//#include "DFA.h"
 #include <vector>
 #include <list>
 
@@ -31,9 +32,10 @@ public:
     NFA starOperation();
     void addTransition(int state, char word, int destination);
     void addTransition(list <int>** transitions, int states, int start_ind);
+    list <int> getTransition(int state, char word);
 
 };
 
-ostream& operator<<(ostream& os, const NFA& nfa);
 
+ostream& operator<<(ostream& os, const NFA& nfa);
 #endif //REGEX_EQUIVALENCE_NFA_H
